@@ -1,7 +1,7 @@
 # DAY 1
 
 Let's try the most basic primitive, HList:
-```
+```scala
     val xs = 32 :: "test" :: 66 :: HNil
 
     object m extends Poly1 {
@@ -17,7 +17,7 @@ Everything as expected. In m we find cases for all types that are in xs.
 
 Lets see if we want to do size, where size of Int is its value and size of
 String is it's length. Should also work for tuple.
-```
+```scala
   val xs = 32 :: "test" :: (150, "abcd") :: HNil
     object size extends Poly1 {
       implicit def caseInt = at[Int](x => x)
@@ -33,8 +33,7 @@ String is it's length. Should also work for tuple.
 
 This does not work for triple. Can we fix it for tuples of arbitrary size? And what about HLists inside HList. Let's first solve the HLists, and then we just convert tuples to HLists and apply same mechanism.
 
-```
-{
+```scala
     val xs = 32 :: ("single", 12) :: "abc" :: (150 :: "abcd" :: "e" :: HNil) :: HNil
 
     object size extends Poly1 {
@@ -54,7 +53,7 @@ This does not work for triple. Can we fix it for tuples of arbitrary size? And w
   ```
   It's not really flattened - it's just the way it's displayed it seems.
 
-  ```
+  ```scala
   println(1 :: (2 :: HNil) :: ("a" :: HNil) :: HNil)
   //1 :: 2 :: HNil :: a :: HNil :: HNil
   ```
