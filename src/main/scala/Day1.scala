@@ -1,7 +1,4 @@
-import java.util.concurrent.atomic.AtomicInteger
-
 import shapeless._
-import shapeless.ops.tuple.IsComposite
 import shapeless.poly._
 import shapeless.ops.hlist._
 
