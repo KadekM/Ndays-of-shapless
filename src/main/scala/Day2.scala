@@ -21,8 +21,8 @@ object Day2 extends App {
     implicit val intToString = new BiMapIS[Int, String]
     implicit val StringToInt = new BiMapIS[String, Int]
     val hmap = HMap[BiMapIS](
-    1 -> "one", 2 -> "two", 3 -> "three",
-    "one" -> 1, "two" -> 2, "three" -> 3)
+      1 -> "one", 2 -> "two", 3 -> "three",
+      "one" -> 1, "two" -> 2, "three" -> 3)
 
     import hmap._
     val xs: Int :: String :: Int :: HNil = 1 :: "two" :: 3 :: HNil
